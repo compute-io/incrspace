@@ -19,18 +19,70 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 To use the module,
 
 ``` javascript
-var foo = require( 'compute-incrspace' );
+var incrspace = require( 'compute-incrspace' );
 ```
 
-#### foo( arr )
 
-What does this function do?
+#### incrspace( start, stop[, increment] )
+
+Generates a linearly spaced numeric `array`. If an `increment` is not provided, the default `increment` is `1`.
+
+``` javascript
+var arr = incrspace( 0, 10, 2 );
+// returns [ 0, 2, 4, 6, 8, 10 ]
+```
+
+
+## Notes
+
+The output `array` is guaranteed to include the `start` value but does __not__ include the `stop` value. Beware that values subsequent to the `start` value are subject to floating point errors. Hence,
+
+``` javascript
+var arr = incrspace( 0.1, 0.5, 0.2 );
+// returns [ 0, ~0.3 ]
+```
+
+where `arr[1]` is only guaranteed to be approximately equal to `0.3`. 
+
+
+If you desire more control over element precision, consider using [compute-roundn](https://github.com/compute-io/roundn):
+
+``` javascript
+var roundn = require( 'compute-roundn' );
+
+// Create an array subject to floating point errors:
+var arr = incrspace( 0, 1.01, 0.02 );
+
+// Round each value to the nearest hundredth:
+roundn( arr, -2 );
+
+console.log( arr.join( '\n' ) );
+```
+
+
+This function is similar to [compute-linspace](https://github.com/compute-io/incrspace).
 
 
 ## Examples
 
 ``` javascript
-var foo = require( 'compute-incrspace' );
+var incrspace = require( 'compute-incrspace' ),
+	out;
+
+// Default behavior:
+out = incrspace( 0, 10 );
+console.log( out.join( '\n' ) );
+
+// Specify increment:
+out = incrspace( 0, 10, 2 );
+console.log( out.join( '\n' ) );
+
+out = incrspace( 0, 11, 2 );
+console.log( out.join( '\n' ) );
+
+// Create an array using a negative increment:
+out = incrspace( 10, 0, -2 );
+console.log( out.join( '\n' ) );
 ```
 
 To run the example code from the top-level application directory,
