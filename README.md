@@ -28,7 +28,7 @@ var incrspace = require( 'compute-incrspace' );
 Generates a linearly spaced numeric `array`. If an `increment` is not provided, the default `increment` is `1`.
 
 ``` javascript
-var arr = incrspace( 0, 10, 2 );
+var arr = incrspace( 0, 11, 2 );
 // returns [ 0, 2, 4, 6, 8, 10 ]
 ```
 
