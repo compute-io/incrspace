@@ -10,6 +10,10 @@
     {
       "name": "Athan Reines",
       "email": "kgryte@gmail.com"
+    },
+    {
+      "name": "Philipp Burckhardt",
+      "email": "pburckhardt@outlook.com"
     }
   ],
   "scripts": {
@@ -30,19 +34,23 @@
     "utils",
     "array",
     "linear",
+    "sequence",
     "mathematics",
     "math"
   ],
   "bugs": {
     "url": "https://github.com/compute-io/incrspace/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
-    "chai": "1.x.x",
+    "chai": "2.x.x",
     "compute-roundn": "^1.0.3",
     "coveralls": "^2.11.1",
     "istanbul": "^0.3.0",
-    "mocha": "1.x.x"
+    "mocha": "2.x.x",
+		"jshint": "^2.6.3",
+		"jshint-stylish": "^1.0.1"
   },
   "licenses": [
     {

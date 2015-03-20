@@ -1,4 +1,4 @@
-incrspace
+Incrspace
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
@@ -16,7 +16,6 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 
 ## Usage
 
-To use the module,
 
 ``` javascript
 var incrspace = require( 'compute-incrspace' );
@@ -42,7 +41,7 @@ var arr = incrspace( 0.1, 0.5, 0.2 );
 // returns [ 0, ~0.3 ]
 ```
 
-where `arr[1]` is only guaranteed to be approximately equal to `0.3`. 
+where `arr[1]` is only guaranteed to be approximately equal to `0.3`.
 
 
 If you desire more control over element precision, consider using [compute-roundn](https://github.com/compute-io/roundn):
@@ -120,15 +119,15 @@ $ make view-cov
 ```
 
 
+---
 ## License
 
-[MIT license](http://opensource.org/licenses/MIT). 
+[MIT license](http://opensource.org/licenses/MIT).
 
 
----
 ## Copyright
 
-Copyright &copy; 2014. Athan Reines.
+Copyright &copy; 2014-2015. Athan Reines.
 
 
 [npm-image]: http://img.shields.io/npm/v/compute-incrspace.svg
