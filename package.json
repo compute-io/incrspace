@@ -42,7 +42,6 @@
     "url": "https://github.com/compute-io/incrspace/issues"
   },
   "dependencies": {
-    "validate.io-nonnegative-integer": "^1.0.0",
     "validate.io-number-primitive": "^1.0.0"
   },
   "devDependencies": {
