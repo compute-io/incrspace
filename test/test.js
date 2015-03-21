@@ -93,6 +93,26 @@ describe( 'compute-incrspace', function tests() {
 		}
 	});
 
+	it( 'should throw an error if the maximum Array length is exceeded', function test() {
+
+		var values = [
+			0.000000000000001,
+			0.00000000000000000000001,
+			0.000000000000000000000000001,
+			0
+		];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			expect( badValue( values[i] ) ).to.throw( RangeError );
+		}
+
+		function badValue( value ) {
+			return function() {
+				incrspace( 0, 10, value );
+			};
+		}
+	});
+
 	it( 'should return a linearly spaced array', function test() {
 		var start, stop, expected, actual;
 
