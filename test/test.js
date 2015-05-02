@@ -24,9 +24,10 @@ describe( 'compute-incrspace', function tests() {
 		expect( incrspace ).to.be.a( 'function' );
 	});
 
-	it( 'should throw an error if the `start` value is not a numeric value', function test() {
+	it( 'should throw an error if the `start` value is not a number primitive', function test() {
 		var values = [
 			'5',
+			new Number( 5 ),
 			null,
 			true,
 			undefined,
@@ -47,9 +48,10 @@ describe( 'compute-incrspace', function tests() {
 		}
 	});
 
-	it( 'should throw an error if the `stop` value is not a numeric value', function test() {
+	it( 'should throw an error if the `stop` value is not a number primitive', function test() {
 		var values = [
 			'5',
+			new Number( 5 ),
 			null,
 			true,
 			undefined,
@@ -70,9 +72,10 @@ describe( 'compute-incrspace', function tests() {
 		}
 	});
 
-	it( 'should throw an error if the `increment` is not a numeric value', function test() {
+	it( 'should throw an error if the `increment` is not a number primitive', function test() {
 		var values = [
 			'5',
+			new Number( 1 ),
 			null,
 			true,
 			undefined,
@@ -86,6 +89,24 @@ describe( 'compute-incrspace', function tests() {
 			expect( badValue( values[i] ) ).to.throw( TypeError );
 		}
 
+		function badValue( value ) {
+			return function() {
+				incrspace( 0, 10, value );
+			};
+		}
+	});
+
+	it( 'should throw an error if the maximum array length is exceeded', function test() {
+		var values = [
+			0.000000000000001,
+			0.00000000000000000000001,
+			0.000000000000000000000000001,
+			0
+		];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			expect( badValue( values[ i ] ) ).to.throw( RangeError );
+		}
 		function badValue( value ) {
 			return function() {
 				incrspace( 0, 10, value );

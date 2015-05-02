@@ -36,12 +36,14 @@
     "linear",
     "sequence",
     "mathematics",
-    "math"
+    "math",
+    "increment"
   ],
   "bugs": {
     "url": "https://github.com/compute-io/incrspace/issues"
   },
   "dependencies": {
+    "validate.io-number-primitive": "^1.0.0"
   },
   "devDependencies": {
     "chai": "2.x.x",
@@ -49,8 +51,8 @@
     "coveralls": "^2.11.1",
     "istanbul": "^0.3.0",
     "mocha": "2.x.x",
-		"jshint": "^2.6.3",
-		"jshint-stylish": "^1.0.1"
+    "jshint": "^2.6.3",
+    "jshint-stylish": "^1.0.1"
   },
   "licenses": [
     {
