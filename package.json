@@ -36,7 +36,8 @@
     "linear",
     "sequence",
     "mathematics",
-    "math"
+    "math",
+    "increment"
   ],
   "bugs": {
     "url": "https://github.com/compute-io/incrspace/issues"
